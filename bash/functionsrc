@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function authplain {
+    printf '\000%s\000%s' $1 $2 | mmencode
+}
+
+function dovesha {
+    echo -n $1 | openssl sha256 -binary | base64
+}
+

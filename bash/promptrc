@@ -1,0 +1,74 @@
+#!/bin/bash
+
+DEF="\[\033[0;00m\]"
+
+B03="\[\033[1;30m\]"
+B02="\[\033[0;30m\]"
+B01="\[\033[1;32m\]"
+B00="\[\033[1;33m\]"
+B0="\[\033[1;34m\]"
+B1="\[\033[1;36m\]"
+B2="\[\033[0;37m\]"
+B3="\[\033[1;37m\]"
+
+RED="\[\033[0;31m\]"
+ORA="\[\033[1;31m\]"
+GRE="\[\033[0;32m\]"
+YEL="\[\033[0;33m\]"
+BLU="\[\033[0;34m\]"
+MAG="\[\033[0;35m\]"
+VIO="\[\033[1;35m\]"
+CYA="\[\033[0;36m\]"
+
+[ $(whoami) = root ] && UPC="$RED" || UPC="$GRE"
+
+__set_ps1()
+{
+    PS1="$UPC\u$DEF $YEL\w$DEF $ORA$(__Scm_PS1)$DEF\n$UPC\\$\[\033[0;00m\] "
+}
+
+__Scm_PS1()
+{
+    git branch >/dev/null 2>&1 && __Git_PS1 && return 0
+    svn info   >/dev/null 2>&1 && __Svn_PS1 && return 0
+    return 1
+}
+
+__Git_PS1()
+{
+    echo git$(__git_ps1)
+}
+
+__Svn_PS1()
+{
+    echo -n "svn ($(echo $(__svn_branch) $(__svn_rev) $(__svn_stat_sum)))"
+}
+
+function __svn_rev()
+{
+    svn info | awk '/Revision:/ {print $2}'
+}
+
+function __svn_url()
+{
+    svn info | awk '/URL:/ {print $2}'
+}
+
+function __svn_branch()
+{
+    local url=$(__svn_url)
+
+    if [[ $url =~ /trunk ]]; then
+       echo -n trunk
+    elif [[ $url =~ (branches|tags)/([^/]+) ]]; then
+       echo -n $BASH_REMATCH
+    fi
+}
+
+function __svn_stat_sum()
+{
+    svn status --ignore-externals | grep --color=never -o '^[ACDIMR?!]' | sort | uniq -c | awk 'BEGIN{OFS=""; ORS=" ";} {print $2,$1}'
+}
+
+PROMPT_COMMAND="__set_ps1"
+

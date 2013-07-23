@@ -1,0 +1,41 @@
+! +-----------------------------+
+! | Default theme (like SSH v1) |
+! +-----------------------------+
+
+SshAskpass*font:		-*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+SshAskpass*shadowThickness:	0
+SshAskpass*borderWidth:		0
+SshAskpass*horizontalSpacing:	2
+SshAskpass*verticalSpacing:	2
+
+!SshAskpass*Indicator.background:		rgb:00/00/80
+!SshAskpass*Indicator.shadowThickness:		2
+!SshAskpass*Indicator.borderWidth:		0
+!SshAskpass*Indicator.height:			7
+!SshAskpass*Indicator.width:			15
+!SshAskpass*Indicator.horizontalSpacing:	2
+!SshAskpass*Indicator.verticalSpacing:		4
+!SshAskpass*Indicator.minimumCount:		8
+!SshAskpass*Indicator.maximumCount:		24
+!
+!SshAskpass*defaultXResolution:	75/in
+!SshAskpass*defaultYResolution:	75/in
+!SshAskpass*xResolutionFuzz:	20/in
+!SshAskpass*yResolutionFuzz:	20/in
+
+! Number of seconds to wait for a key- or button-press
+! before giving up.  '0' means wait forever.
+SshAskpass*inputTimeout:	0
+
+! Ssh-askpass grabs the keyboard by default.
+! To stop it from grabbing the keyboard, use:
+!SshAskpass*grabKeyboard:	false
+
+! Ssh-askpass does not grab the pointer by default.
+! To make it grab the pointer, use:
+!SshAskpass*grabPointer:	true
+
+!SshAskpass*Dialog.title:	OpenSSH Authentication Passphrase Request
+!SshAskpass*Dialog.label:	Please enter your authentication passphrase:
+!SshAskpass*okButton.label:	Ok
+!SshAskpass*cancelButton.label:	Cancel

@@ -1,0 +1,11 @@
+#!/bin/bash
+cd $HOME
+. /etc/bash.bashrc
+. $HOME/.bashrc
+
+detach() { 
+    [[ "$BASH_COMMAND" = "$PROMPT_COMMAND" ]] && return 0
+    [[ "$BASH_COMMAND" =~ ^sudo ]] && sudo -E -b ${BASH_COMMAND/sudo /} || (eval $BASH_COMMAND &)
+    exit 0
+}
+trap detach DEBUG

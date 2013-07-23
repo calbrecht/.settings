@@ -1,0 +1,5 @@
+#include ".settings/xresources/colors"
+#include ".settings/xresources/defaults"
+#include ".settings/xresources/urxvt"
+#include ".settings/xresources/xv"
+#include ".settings/xresources/ssh-askpass"

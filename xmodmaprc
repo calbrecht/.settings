@@ -1,0 +1,7 @@
+!clear mod3
+!clear Lock
+!add mod3 = Caps_Lock
+! Kommentar: change Caps-Lock -> mod4
+remove Lock = Caps_Lock
+keysym Caps_Lock = Super_L
+add mod4 = Super_L

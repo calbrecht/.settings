@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#alias sduo="sl -l; sl -l; sl -l"
+alias l="ls -al --color=always"
+alias ..="cd .."
+alias shutdown="sudo shutdown -h now"
+alias updatedb="sudo updatedb"
+alias resetkeys=setxkbmap
+alias gp="git push"
+alias ga="git add"
+alias gc="git commit"
+alias gpr="git pull --rebase"
+
+alias t="todo.sh -cant"
+complete -F _todo t
+
+alias p="python /home/alab/bin/Punch.py"
+
+alias timmy="$HOME/bin/timmy"
+complete -C 'timmy complete' timmy

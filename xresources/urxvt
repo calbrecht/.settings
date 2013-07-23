@@ -1,0 +1,30 @@
+urxvt*depth:		32
+urxvt*fading:		30
+urxvt*transparent:      False
+urxvt*background:	[96]S_base03
+urxvt*borderColor:      [96]S_base03
+urxvt*troughColor:	[96]S_base03
+urxvt*scrollColor:	[96]S_base03
+urxvt*fadeColor: 	[96]S_base03
+urxvt*scrollBar:	False
+urxvt*saveLines:	65535
+urxvt*visualBell:	True
+
+urxvt*externalBorder:   0
+
+urxvt.colorIT:          S_green
+urxvt.colorBD:          S_yellow
+urxvt.colorUL:          S_magenta
+
+urxvt*perl-ext-common:	default,matcher,clipboard,vtwheel,font-size
+
+urxvt*urlLauncher:      firefox
+urxvt*matcher.button:   1
+
+urxvt*font: -*-terminus-*-*-*-*-*-120-*-*-*-*-*-*
+urxvt*boldFont: -*-terminus-*-*-*-*-*-120-*-*-*-*-*-*
+urxvt*italicFont: -*-terminus-*-*-*-*-*-120-*-*-*-*-*-*
+urxvt*boldItalicFont: -*-terminus-*-*-*-*-*-120-*-*-*-*-*-*
+
+urxvt.keysym.C-plus:   perl:font-size:incglobal
+urxvt.keysym.C-minus:  perl:font-size:decglobal
